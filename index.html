@@ -50,7 +50,6 @@
         var $finalB = 0;
         var $finalR = 0;  
    
-   
    //G1 RED AND BLUE
    //If the table element is clicked
    $('#G1H1ScoreB').click(function() {
@@ -108,10 +107,15 @@
            //MINUS
            //if minus table element is clicked
            $('#minusOneBG1H1').click(function() {
-                   //subtract one from blues total
+                //subtract one from blues total
                 $G1TotalB--;       
                 //subtract one from that game and halfs total
                 $G1H1ScoreB--;
+                //check if user has entered the negatives
+                if( $G1H1ScoreB < 0 ) {
+                    $G1H1ScoreB++;
+                    $G1TotalB++;
+                }
                 //display that game and halfs total (etc for below)
            $('#G1H1ScoreB').text($G1H1ScoreB)
                    });
@@ -119,18 +123,30 @@
                    $('#minusOneBG1H2').click(function() {
                 $G1TotalB--;       
                 $G1H2ScoreB--;
+                if( $G1H2ScoreB < 0 ) {
+                    $G1H2ScoreB++;
+                    $G1TotalB++;
+                }
            $('#G1H2ScoreB').text($G1H2ScoreB)
                    });
                    
                    $('#minusOneBG2H1').click(function() {
                 $G2TotalB--;       
                 $G2H1ScoreB--;
+                if( $G2H1ScoreB < 0 ) {
+                    $G2H1ScoreB++;
+                    $G2TotalB++;
+                }
            $('#G2H1ScoreB').text($G2H1ScoreB)
                    });
                    
                     $('#minusOneBG2H2').click(function() {
                 $G2TotalB--;       
                 $G2H2ScoreB--;
+                if( $G2H2ScoreB < 0 ) {
+                    $G2H2ScoreB++;
+                    $G2TotalB++;
+                }
            $('#G2H2ScoreB').text($G2H2ScoreB)
                    });             
                    
@@ -138,24 +154,40 @@
                    $('#minusOneRG1H1').click(function() {
                 $G1TotalR--;       
                 $G1H1ScoreR--;
+                if( $G1H1ScoreR < 0 ) {
+                    $G1H1ScoreR++;
+                    $G1TotalR++;
+                }
            $('#G1H1ScoreR').text($G1H1ScoreR)
                    });
                    
                    $('#minusOneRG1H2').click(function() {
                 $G1TotalR--;       
                 $G1H2ScoreR--;
+                if( $G1H2ScoreR < 0 ) {
+                    $G1H2ScoreR++;
+                    $G1TotalR++;
+                }
            $('#G1H2ScoreR').text($G1H2ScoreR)
                    });
                    
                    $('#minusOneRG2H1').click(function() {
                 $G2TotalR--;       
                 $G2H1ScoreR--;
+                if( $G2H1ScoreR < 0 ) {
+                    $G2H1ScoreR++;
+                    $G2TotalR++;
+                }
            $('#G2H1ScoreR').text($G2H1ScoreR)
                    });
                    
                     $('#minusOneRG2H2').click(function() {
                 $G2TotalR--;       
                 $G2H2ScoreR--;
+                if( $G2H2ScoreR < 0 ) {
+                    $G2H2ScoreR++;
+                    $G2TotalR++;
+                }
            $('#G2H2ScoreR').text($G2H2ScoreR)
                    });
            
@@ -340,15 +372,5 @@
 </table>
     <p>Created by <a href="http://www.reddit.com/user/blaziken311/">/u/blaziken311</a> and rewritten using JQuery by <a href="http://reddit.com/user/flappytowel/">/u/flappytowel</a>
     <p>This scoreboard was created for <a href="http://tagpro.gg/">Tagpro</a></p>
-    <p><font color="grey" id="howToUse">HOW TO USE:</font></p>
-    <div id="howTo">
-        <ul>
-            <li>Click Blue or Red Team to change that Team's Name.</li>
-            <li>Click Final Total to reset all scores.</li>
-            <li>Click the numbers on either side to increase it by 1.</li>
-            <li>You can't click the numbers next to the totals, those will calculate automatically from each half.</li>
-            <li>...try clicking on the header...</li>
-            <li>Click me to hide me.</li>
-        </ul>
-    </div>
+    <p><a href="https://github.com/blaziken311/scoreboard/blob/master/README.md"><font size="1" color="grey" id="howToUse">How to Use</font></a></p>
 </html>
