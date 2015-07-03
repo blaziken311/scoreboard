@@ -217,14 +217,6 @@
            $('#title').text("Simple Tagpro Scoreboard");  
            });
            
-           
-           //remove how to stuff
-                $('#howTo').click(function() {
-                $('#howTo').remove();
-                $('#howToUse').remove();
-                });
-           
-           
            //RESET SCORES
            $('#finalTotal').mouseover(function() {
            $('#finalTotal').text('Reset All?');
@@ -270,6 +262,21 @@
                         }
             });
     });
+
+    // allows user to change team name; $which indicates which team name is being changed
+    window.nameChange = function( $which ) {
+        var name;
+        do {
+            var name = prompt("Please enter team name");
+        }
+        // to ensure the user enters a team name with a length
+        while( name.length <= 0 );
+        if( $which == 0 )
+            $('#teamName1').text(name);
+        if( $which == 1 )
+            $('#teamName2').text(name);
+    }
+   
     </script>
 </head>
  
@@ -279,7 +286,7 @@
 <table width=100% cellpadding=8>
     <tr>
         <td>
-            <div id="teamName1" class="blue">
+            <div id="teamName1" class="blue" onclick="nameChange(0);">
                 Blue Team
             </div>
         </td>
@@ -287,7 +294,7 @@
         <td><font color="red">V</font><font color="#3366FF">S</font></td>
         <td></td>
         <td>
-            <div id="teamName2" class="red">
+            <div id="teamName2" class="red" onclick="nameChange(1);">
                 Red Team
             </div>
         </td>
