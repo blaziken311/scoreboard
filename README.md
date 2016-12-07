@@ -8,4 +8,4 @@ HTML Scoreboard written for the webgame Tagpro.
 * You can't click the numbers next to the totals, those are automatically calculated.
 
 # Where am I hosted?
-[Here.](http://tagproscoreboard.42pag.es/)
+I don't have a home :(
