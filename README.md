@@ -8,4 +8,4 @@ HTML Scoreboard written for the webgame Tagpro.
 * You can't click the numbers next to the totals, those are automatically calculated.
 
 # Where am I hosted?
-I don't have a home :(
+On my [Github Pages](https://sriracha21.github.io/)!
